@@ -7,6 +7,9 @@ public class Jump : MonoBehaviour
     private Rigidbody rb;
     public float force = 20f;
     private bool OnFloor = false;
+    public float gravityScale;
+    public float gravScaleUp;
+    public float gravScaleDown;
     
 
     // Start is called before the first frame update
@@ -23,6 +26,17 @@ public class Jump : MonoBehaviour
             rb.AddForce(Vector3.up * force);
         }
 
+                if (rb.velocity.y > 0) {
+            gravityScale = gravScaleUp;
+        } else if (rb.velocity.y < 0) {
+            gravityScale = gravScaleDown;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        rb.AddForce((gravityScale - 1) * Physics.gravity * rb.mass);
     }
 
     private void OnCollisionEnter(Collision collision)

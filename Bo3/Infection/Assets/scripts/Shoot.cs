@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
 
     public GameObject prefab;
     public ParticleSystem muzzleFlash;
+ 
 
 
 
@@ -25,7 +26,7 @@ public class Shoot : MonoBehaviour
             GameObject ob = Instantiate(prefab);
             ob.transform.position = transform.position + new Vector3(0.0f, 1.0f, 0.0f);
             ob.transform.rotation = transform.rotation;
-            Destroy(ob, 3f);
+            Destroy(ob, 2f);
           
         }
 
