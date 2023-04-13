@@ -11,6 +11,7 @@ public class KillHit : MonoBehaviour
     private AudioSource sound;
     public delegate void EnemyKilled();
     public static event EnemyKilled OnEnemyKilled;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +37,13 @@ public class KillHit : MonoBehaviour
         if (coll.gameObject.tag == targetTag)
         {
             Debug.Log("Hit");
-            Destroy(coll.gameObject, 0.1f);
+            OnEnemyKilled();
+            Destroy(coll.gameObject, 0.2f);
+            
+           
         }
 
-        if (OnEnemyKilled != null)
-        {
-            OnEnemyKilled();
-        }
+        
     }
 
     

@@ -7,7 +7,10 @@ public class Damageplayer : MonoBehaviour
     [SerializeField] private int Hitdamage;
     [SerializeField] private HealthBar healthbar;
 
-    
+    private void Start()
+    {
+        healthbar = GameObject.Find("HealthController").GetComponent<HealthBar>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))

@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
 
     public Transform[] Spawnpoints;
     public GameObject Enemyprefab;
+    public AudioSource zombieSpawn;
     
     void Start()
     {
@@ -21,6 +22,8 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnNewEnemy()
     {
-        Instantiate(Enemyprefab, Spawnpoints[0].transform.position, Quaternion.identity);
+        int randomNumber = Mathf.RoundToInt(Random.Range(0f, Spawnpoints.Length - 1));
+        Instantiate(Enemyprefab, Spawnpoints[randomNumber].transform.position, Quaternion.identity);
+        zombieSpawn.Play();
     }
 }
