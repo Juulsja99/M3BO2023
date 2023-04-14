@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         SpawnNewEnemy();
+        SpawnNewEnemy();
     }
 
    void OnEnable()
