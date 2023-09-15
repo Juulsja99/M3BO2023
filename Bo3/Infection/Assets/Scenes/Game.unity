@@ -3165,6 +3165,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1512027454757594913, guid: d90b9e48e5d058f40bdf61b9026f0c30, type: 3}
+      propertyPath: rotSpeed
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 1512027455910319453, guid: d90b9e48e5d058f40bdf61b9026f0c30, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
